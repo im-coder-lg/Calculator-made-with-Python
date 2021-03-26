@@ -1,3 +1,0 @@
-Run the executable if you don't have Python for Windows or if you have Python, run the source code.
-By code-lokesh2008
-Copyright protected with GNU License
