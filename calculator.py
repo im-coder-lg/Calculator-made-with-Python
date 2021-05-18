@@ -23,7 +23,7 @@ text_Input=StringVar()
 
 InfoLabel=Label(cal,font=('Montserrat',20,'bold'), text="Calculator").grid(row=0,column=1)
 
-textDisplay=Entry(cal,font=('ari5al',20,'bold'),textvariable=text_Input,bd=30,insertwidth=4,
+textDisplay=Entry(cal,font=('arial',20,'bold'),textvariable=text_Input,bd=30,insertwidth=4,
                   bg="powder blue",justify='right').grid(row=1)
 
 btn7=Button(cal,padx=16,pady=16,bd=8,fg="black",font=('arial',20,'bold'),
