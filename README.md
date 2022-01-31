@@ -1,3 +1,2 @@
 # Calculator-made-with-Python
-<!-- Check the website for more info. Thank you -->
-in progress
+I'm back. I will be adding Sun Valley theming here and offering this code to the TimerX team(we'll have to change the name soon). This will be revamped soon.
