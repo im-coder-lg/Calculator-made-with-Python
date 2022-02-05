@@ -15,8 +15,7 @@ jobs:
         with:
           python-version: 3.8
       - uses: isort/isort-action@master
-        with:
-            requirementsFiles: "requirements.txt requirements-dev.txt requirements-windows.txt"
+
   black:
     runs-on: ubuntu-latest
 
