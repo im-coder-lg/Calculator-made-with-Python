@@ -14,19 +14,13 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - uses: isort/isort-action@master
+      - name: Isort Formatting
+        run: |
+          pip install isort
+          isort calculator.py
+          git add .
+          git commit -m "style: isort cronjob"
+          git push --force
+            
 
-  black:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          # Make sure the actual branch is checked out when running on pull requests
-          ref: ${{ github.head_ref }}
-
-      - uses: psf/black@stable
-        with:
-          src: "."
-          version: "21.5b1"
+  
