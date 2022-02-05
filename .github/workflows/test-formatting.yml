@@ -1,0 +1,33 @@
+name: Test Formatting
+
+on:
+  schedule: 
+  - cron: 30 05 15 * *
+  workflow_dispatch:
+
+
+jobs:
+  isort:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - uses: isort/isort-action@master
+        with:
+            requirementsFiles: "requirements.txt requirements-dev.txt requirements-windows.txt"
+  black:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          # Make sure the actual branch is checked out when running on pull requests
+          ref: ${{ github.head_ref }}
+
+      - uses: psf/black@stable
+        with:
+          src: "."
+          version: "21.5b1"
