@@ -7,17 +7,18 @@ on:
 
 
 jobs:
-  isort:
+  formatting:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - name: Isort Formatting
+      - name: Code Formatting
         run: |
-          pip install isort
+          pip install isort black
           isort calculator.py
+          black calculator.py
       - name: Test concatenation
         run: cat calculator.py
       - uses: fregante/setup-git-user@v1
