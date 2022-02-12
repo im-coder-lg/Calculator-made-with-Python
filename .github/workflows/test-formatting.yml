@@ -18,8 +18,11 @@ jobs:
         run: |
           pip install isort
           isort calculator.py
+      - name: Test concatenation
+        run: cat calculator.py
       - uses: fregante/setup-git-user@v1
       - name: Commit
         run: |
+          git add .
           git commit -m "style: Code Formatting Workflow" -m "Either triggered by cron or workflow_dispatch"
           git push --force
